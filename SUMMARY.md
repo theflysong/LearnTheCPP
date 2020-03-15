@@ -1,18 +1,18 @@
-# Summary
+# 目录
 
-* [ǰ��](README.md)
+* [前言](README.md)
 
 -----
-* ����ͷ�ļ�
-    * [ʲô��ͷ�ļ�](Chapter1/1.md)
-    * [���η�ֹͷ�ļ��ظ�����](Chapter1/2.md)
-    * [С��1](test/C1.md)
-* ���ڽṹ������
-    * [OOP��������](Chapter2/1.md)
-    * [C�Ľṹ����C++��������](Chapter2/2.md)
-    * [�̳У��������麯���봿�麯��](Chapter2/3.md)
-    * [public,private��protected](Chapter2/4.md)
-    * [С��2](test/C2.md)
-* ָ��
-    * [ʲô��ָ��](Chapter3/1.md)
+* 头文件
+    * [什么是头文件](Chapter1/1.md)
+    * [如何防止头文件重复包含](Chapter1/2.md)
+    * [小结1](test/C1.md)
+* 类
+    * [OOP简述](Chapter2/1.md)
+    * [C的结构体与C++的类的区别](Chapter2/2.md)
+    * [虚函数，静态，抽象与继承](Chapter2/3.md)
+    * [public,private和protected](Chapter2/4.md)
+    * [小结2](test/C2.md)
+* ָ指针
+    * [什么是指针](Chapter3/1.md)
 
