@@ -6,6 +6,7 @@
 * 头文件
     * [什么是头文件](Chapter1/1.md)
     * [如何防止头文件重复包含](Chapter1/2.md)
+    * [extern](Chapter1/3.md)
     * [小结1](test/C1.md)
 * 类
     * [OOP简述](Chapter2/1.md)
