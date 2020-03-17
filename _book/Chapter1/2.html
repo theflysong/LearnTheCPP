@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>如何防止头文件重复包含 · GitBook</title>
+        <title>如何防止头文件的重复编译错误 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -141,7 +141,7 @@
                 <a href="2.html">
             
                     
-                    如何防止头文件重复包含
+                    如何防止头文件的重复编译错误
             
                 </a>
             
@@ -225,7 +225,7 @@
                 <a href="../Chapter2/3.html">
             
                     
-                    虚函数，静态，抽象与继承
+                    virtual函数，static，抽象类与继承
             
                 </a>
             
@@ -326,7 +326,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >如何防止头文件重复包含</a>
+        <a href=".." >如何防止头文件的重复编译错误</a>
     </h1>
 </div>
 
@@ -341,7 +341,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5982;&#x4F55;&#x9632;&#x6B62;&#x5934;&#x6587;&#x4EF6;&#x91CD;&#x590D;&#x5305;&#x542B;">&#x5982;&#x4F55;&#x9632;&#x6B62;&#x5934;&#x6587;&#x4EF6;&#x91CD;&#x590D;&#x5305;&#x542B;</h1>
+                                <h1 id="&#x5982;&#x4F55;&#x9632;&#x6B62;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x91CD;&#x590D;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;">&#x5982;&#x4F55;&#x9632;&#x6B62;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x91CD;&#x590D;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;</h1>
 <p>&#x50CF;VC&#x8FD9;&#x79CD;MSVC&#x7CFB;&#x5217;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x4ED6;&#x4EEC;&#x6709;&#x63D0;&#x4F9B;&#x4E00;&#x6761;&#x9884;&#x5904;&#x7406;&#x6307;&#x4EE4;:<code>#pragram once</code>&#x3002;</p>
 <p>&#x5F53;&#x7136;&#xFF0C;&#x8BB8;&#x591A;&#x4F7F;&#x7528;MinGW&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x53EF;&#x80FD;&#x4F1A;&#x53EB;&#x82E6;&#x8FDE;&#x5929;&#x2014;&#x2014;&#x4ED6;&#x4EEC;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x6CA1;&#x6709;&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x3002;&#x96BE;&#x9053;MinGW&#x5C31;&#x4E0D;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x5934;&#x6587;&#x4EF6;&#x91CD;&#x590D;&#x5305;&#x542B;&#x4E86;&#x5417;&#xFF1F;</p>
 <p>NoNoNo,&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;#ifndef...#define...#endif&#x6765;&#x64CD;&#x4F5C;&#x3002;&#x5177;&#x4F53;&#x957F;&#x8FD9;&#x6837;</p>
@@ -353,8 +353,14 @@
 <span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
 </code></pre>
 <p>&#x5927;&#x6982;&#x610F;&#x601D;&#x5C31;&#x662F;:&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;xxx&#x5B8F;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5B9A;&#x4E49;xxx&#x5B8F;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x3002;</p>
-<p>&#x6211;&#x4E2A;&#x4EBA;&#x63A8;&#x8350;&#x5B8F;&#x547D;&#x540D;&#x4E3A;<code>__[&#x5934;&#x6587;&#x4EF6;&#x540D;]__</code></p>
-<p>&#x5F53;&#x7136;&#xFF0C;&#x5B8F;&#x547D;&#x540D;&#x7684;&#x524D;&#x63D0;&#x4EE5;&#x4E0D;&#x51B2;&#x7A81;&#x4E3A;&#x51C6;&#x3002;</p>
+<p>&#x5B8F;&#x547D;&#x540D;&#x7684;&#x524D;&#x63D0;&#x4EE5;&#x4E0D;&#x51B2;&#x7A81;&#x4E3A;&#x51C6;&#x3002;</p>
+<h2 id="q&#x5982;&#x679C;&#x51B2;&#x7A81;&#x4E86;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1F;">Q:&#x5982;&#x679C;&#x51B2;&#x7A81;&#x4E86;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1F;</h2>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x5047;&#x8BBE;A.h&#x548C;B.h&#x90FD;&#x662F;&#x7528;&#x4E86;C&#x8FD9;&#x4E2A;&#x5B8F;&#x540D;&#x3002;&#x5982;&#x679C;&#x6211;&#x6070;&#x597D;&#x540C;&#x65F6;&#x9700;&#x8981;&#x8FD9;&#x4E24;&#x4E2A;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x8981;&#x4E0D;A.h&#x7684;&#x529F;&#x80FD;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x8981;&#x4E48;B.h&#x7684;&#x529F;&#x80FD;&#x88AB;&#x8986;&#x76D6;&#x3002;&#x5047;&#x8BBE;&#x4F60;&#x4F7F;&#x7528;DevC++&#x4F5C;&#x4E3A;&#x4F60;&#x7684;IDE,&#x5F53;&#x4F60;&#x70B9;&#x51FB;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#x540E;&#xFF0C;IDE&#x5C31;&#x4F1A;&#x628A;&#x4F60;&#x5E26;&#x5230;&#x4E00;&#x4E2A;.o&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8BA9;&#x4F60;&#x72EC;&#x81EA;&#x5728;&#x98CE;&#x4E2D;&#x51CC;&#x4E71;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C3D;&#x91CF;&#x7684;&#x907F;&#x514D;&#x6B64;&#x7C7B;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#xFF0C;&#x6211;&#x5728;&#x8FD9;&#x91CC;&#x63A8;&#x9500;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;&#x8FD8;&#x6CA1;&#x5F00;&#x59CB;&#x7528;&#x7684;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</p>
+<p><code>__[&#x4F5C;&#x8005;&#x540D;]_[&#x5934;&#x6587;&#x4EF6;&#x540D;]__</code></p>
+<p>&#x6BD4;&#x5982;Steve&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>Creeper.h</code>&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x5934;&#x6587;&#x4EF6;&#x5B8F;&#x540D;&#x5C31;&#x662F;:</p>
+<p><code>__Steve_Creeper__</code></p>
 
                                 
                                 </section>
@@ -398,7 +404,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"如何防止头文件重复包含","level":"2.1.2","depth":2,"next":{"title":"extern","level":"2.1.3","depth":2,"path":"Chapter1/3.md","ref":"Chapter1/3.md","articles":[]},"previous":{"title":"什么是头文件","level":"2.1.1","depth":2,"path":"Chapter1/1.md","ref":"Chapter1/1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/2.md","mtime":"2020-03-15T08:28:01.573Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-16T03:03:15.716Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"如何防止头文件的重复编译错误","level":"2.1.2","depth":2,"next":{"title":"extern","level":"2.1.3","depth":2,"path":"Chapter1/3.md","ref":"Chapter1/3.md","articles":[]},"previous":{"title":"什么是头文件","level":"2.1.1","depth":2,"path":"Chapter1/1.md","ref":"Chapter1/1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/2.md","mtime":"2020-03-17T02:33:43.549Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-17T02:46:08.238Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
